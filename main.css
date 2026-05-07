@@ -134,3 +134,51 @@ body {
     color: #262626;
     cursor: pointer;
 }
+.likes-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 8px;
+}
+
+.user-avatars {
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar, .avatar-more {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2); /* Borde sutil para el fondo oscuro */
+    object-fit: cover;
+    margin-left: -10px; /* Aquí ocurre la magia del solapamiento */
+    transition: transform 0.2s;
+}
+
+/* El primer avatar no debe tener margen negativo */
+.avatar:first-child {
+    margin-left: 0;
+}
+
+.avatar:hover {
+    transform: translateY(-5px); /* Efecto divertido al pasar el ratón */
+    z-index: 10;
+}
+
+.avatar-more {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.likes-text {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+}
